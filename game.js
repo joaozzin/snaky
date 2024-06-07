@@ -107,8 +107,8 @@ class Snake {
 
         if (head.overlap(food)) {
             if (food.shapeColor == "#DE1C16") {
-                pickLocation(1);
-                this.grow(15);
+                pickLocation();
+                this.grow(1);
             } else if (food.shapeColor == "#FF9A00") {
                 pickLocation();
                 (shop.open)? shop.hide():shop.show();
@@ -152,7 +152,7 @@ class Shop{
         this.bg = createSprite(500,200,200,400);
         this.bg.shapeColor = "white";
         this.bg.depth = 2;
-        this.lc = "white";
+        this.lc = "white";                                                             //botar verde escuro
         this.open = false;
         this.bc = [
             {color: color(0,250,0)       ,price:0 ,adquired:true ,name:"verde"},
@@ -188,7 +188,7 @@ class Shop{
             {color: color(230,190,125,50),price:10,adquired:false,name:"TRareia"},
             {color: color(115,230,55,50) ,price:10,adquired:false,name:"TRlimão"},
             {color: color(130,100,0,50)  ,price:10,adquired:false,name:"TRocre"},
-        ]
+        ]                                                                              //colocar preços
         this.onStock = [];
     }
     hide(){
